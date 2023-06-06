@@ -1,0 +1,49 @@
+{
+  "dataset": "cifar10",
+  "dataset_configs": {
+    "out_type": "0-1"
+  },
+  "diffusion": {
+    "type": "ordinal_jump",
+    "decay_schedule": "beta_linear",
+    "logsnr_start": 10,
+    "logsnr_end": -12,
+    "beta_start": 0.001,
+    "beta_end": "auto",
+    "continuous": false,
+    "timesteps": 1000,
+    "pred_type": "x_0",
+    "loss_type": "kl",
+    "lbd": "auto",
+    "clip_range": [0, 1],
+    "z_rescale": true,
+    "p_self_cond": 0
+  },
+  "model": {
+    "in_channels": 3,
+    "hid_channels": 256,
+    "out_channels": 3,
+    "ch_multipliers": [1, 1, 1],
+    "num_res_blocks": 3,
+    "apply_attn": [false, true, true],
+    "drop_rate": 0.2,
+    "resample_with_res": true,
+    "scale_shift": true,
+    "out_activation": "softplus"
+  },
+  "trainer": {
+    "epochs": 3600,
+    "batch_size": 128,
+    "lr": 0.0002,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "weight_decay": 0.001,
+    "warmup": 0,
+    "grad_norm": 1.0,
+    "use_ema": true,
+    "ema_decay": 0.9999,
+    "eval_num_samples": 64,
+    "eval_intv": 60,
+    "chkpt_intv": 600
+  }
+}

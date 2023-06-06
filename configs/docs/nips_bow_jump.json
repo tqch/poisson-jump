@@ -1,0 +1,45 @@
+{
+  "seed": 1234,
+  "dataset": "nips",
+  "diffusion": {
+    "type": "ordinal_jump",
+    "decay_schedule": "beta_linear",
+    "logsnr_end": -12,
+    "beta_start": 0.001,
+    "beta_end": "auto",
+    "continuous": false,
+    "timesteps": 100,
+    "pred_type": "x_0",
+    "loss_type": "kl",
+    "lbd": 10,
+    "clip_range": null,
+    "normalize": null,
+    "z_rescale": false,
+    "p_self_cond": 0
+  },
+  "model": {
+    "in_dim": 12038,
+    "base_dim": 128,
+    "multiplier": 1,
+    "num_layers": 3,
+    "drop_rate": 0,
+    "transform": "none",
+    "out_activation": "softplus"
+  },
+  "trainer": {
+    "epochs": 600,
+    "batch_size": 128,
+    "lr": 0.001,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "weight_decay": 0,
+    "warmup": 0,
+    "grad_norm": 1.0,
+    "use_ema": false,
+    "ema_decay": 0.9999,
+    "eval_num_samples": 1024,
+    "eval_intv": 100,
+    "eval_batch_size": 1024,
+    "chkpt_intv": 600
+  }
+}

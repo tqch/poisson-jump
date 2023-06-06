@@ -1,0 +1,8 @@
+matplotlib
+numpy
+scipy
+tensorboardX
+torch==1.12.1+cu113
+torchvision==0.13.1+cu113
+tqdm
+wget
